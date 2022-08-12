@@ -106,7 +106,7 @@ For some libraries that’s not a problem — those that process annotations and
 
 
 ## 7. Moving everything to the default package
-The -repackageclasses option is not added by default in the ProGuard config. If you are already obfuscating your code and have fixed any problems with proper keep rules, you can add this option to further reduce DEX size. It works by moving all classes to the default (root) package, essentially freeing up the space taken up by strings like “com.example.myapp.somepackage”.
+The -repackageclasses option is not added by default in the ProGuard config. If you are already obfuscating your code and have fixed any problems with proper keep rules, you can add this option to further reduce DEX size. It works by moving all classes to the default (root) package, essentially freeing up the space taken up by strings like ***“com.example.myapp.somepackage”.***
 
 `
 -repackageclasses

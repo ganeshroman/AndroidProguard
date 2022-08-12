@@ -6,7 +6,7 @@
 
 Detects and safely ***removes unused classes, fields, methods, and attributes from your app*** and its library dependencies (making it a valuable tool for working around the 64k reference limit). For example, if you use only a few APIs of a library dependency, shrinking can identify library code that your app is not using and remove only that code from your app.
 
-  - ***Resource shrinking***
+  - ***Resource Shrinking***
     Removes unused resources from your packaged app, including unused resources in your app’s library dependencies. It works in conjunction with code shrinking such that once unused code has been removed, any resources no longer referenced can be safely removed as well.
     
     
@@ -47,6 +47,18 @@ Many of the tools that simplify serializing and deserializing these fields rely 
 
 `-keep class com.example.data.api.service.model.** { *; }`
 
+```
+@Keep
+data class User(val id: String = "")
+```
+
+for Keeping Class Members
+
+```
+-keepclassmembers class com.mindorks.sample.User{
+    public *;
+}
+```
 
 ## 2. Java code called from native side (JNI)
 Android’s default ProGuard files (you should always include them, they have some really useful rules) already contain a rule for methods that are implemented on the native side `(-keepclasseswithmembernames class * { native <methods>; })`
